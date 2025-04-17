@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace MicroPHP\Swagger\Util;
 
+use Exception;
 use MicroPHP\Framework\Config\Config;
 use MicroPHP\Swagger\Contract\PathGetterInterface;
 use MicroPHP\Swagger\Enum\MethodEnum;
@@ -13,6 +14,7 @@ class RouteGetter
 {
     /**
      * @return null|class-string
+     * @throws Exception
      */
     public static function getRouteByContent(?Context $context, MethodEnum $requestMethod = null): ?string
     {
@@ -25,7 +27,6 @@ class RouteGetter
         if ($class instanceof PathGetterInterface) {
             return $class->getPath($controller, $function, $requestMethod);
         }
-
-        return null;
+        throw new Exception('PathGetterInterface not implement');
     }
 }

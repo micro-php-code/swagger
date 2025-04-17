@@ -12,7 +12,7 @@ class ConfigProvider implements ConfigProviderInterface
     {
         return [
             'publish' => [
-                'swoole' => [
+                'swagger' => [
                     'from' => __DIR__ . '/config.php',
                     'to' => base_path('config/swagger.php'),
                 ],
