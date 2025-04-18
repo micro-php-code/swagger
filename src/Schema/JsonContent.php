@@ -11,7 +11,7 @@ use OpenApi\Attributes\Property;
 #[Attribute(Attribute::TARGET_CLASS)]
 class JsonContent extends SwaggerJsonContent
 {
-    public function __construct(bool $isResponse, string $ref = null, array $properties = null)
+    public function __construct(bool $isResponse, ?string $ref = null, ?array $properties = null)
     {
         if ($isResponse) {
             $baseProperties = static::getResponseBaseProperties();

@@ -21,6 +21,6 @@ class Swagger
         $path = $config['output_dir'];
         @mkdir($path, 0755, true);
         $ext = pathinfo($config['filename'], PATHINFO_EXTENSION);
-        file_put_contents(rtrim($path, '/') . '/' . $config['filename'], 'json' == $ext ? $openapi->toJson() : $openapi->toYaml());
+        file_put_contents(rtrim($path, '/') . '/' . $config['filename'], $ext == 'json' ? $openapi->toJson() : $openapi->toYaml());
     }
 }

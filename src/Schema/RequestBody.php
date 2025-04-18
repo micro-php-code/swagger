@@ -15,16 +15,15 @@ class RequestBody extends \OpenApi\Attributes\RequestBody
      * @param null|Attachable[]        $attachables
      */
     public function __construct(
-        object|string $ref = null,
-        string $request = null,
-        string $description = null,
-        bool $required = null,
+        null|object|string $ref = null,
+        ?string $request = null,
+        ?string $description = null,
+        ?bool $required = null,
         // annotation
-        array $x = null,
-        array $attachables = null,
+        ?array $x = null,
+        ?array $attachables = null,
     ) {
-        $content = new class($ref) extends JsonContent
-        {
+        $content = new class($ref) extends JsonContent {
             public function __construct(string $ref)
             {
                 parent::__construct(isResponse: false, ref: $ref);

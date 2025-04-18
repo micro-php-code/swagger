@@ -27,22 +27,22 @@ class Get extends \OpenApi\Attributes\Get
      * @param null|Attachable[]        $attachables
      */
     public function __construct(
-        string $path = null,
-        string $operationId = null,
-        string $description = null,
-        string $summary = null,
-        array $security = null,
-        array $servers = null,
-        RequestBody $requestBody = null,
-        array $tags = null,
-        array $parameters = null,
-        array $responses = null,
-        array $callbacks = null,
-        ExternalDocumentation $externalDocs = null,
-        bool $deprecated = null,
+        ?string $path = null,
+        ?string $operationId = null,
+        ?string $description = null,
+        ?string $summary = null,
+        ?array $security = null,
+        ?array $servers = null,
+        ?RequestBody $requestBody = null,
+        ?array $tags = null,
+        ?array $parameters = null,
+        ?array $responses = null,
+        ?array $callbacks = null,
+        ?ExternalDocumentation $externalDocs = null,
+        ?bool $deprecated = null,
         // annotation
-        array $x = null,
-        array $attachables = null
+        ?array $x = null,
+        ?array $attachables = null
     ) {
         parent::__construct(
             path: $path ?: RouteGetter::getRouteByContent(Generator::$context, MethodEnum::GET),

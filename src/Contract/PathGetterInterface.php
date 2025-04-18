@@ -8,5 +8,5 @@ use MicroPHP\Swagger\Enum\MethodEnum;
 
 interface PathGetterInterface
 {
-    public static function getPath(string $controller, string $function, MethodEnum $requestMethod = null): ?string;
+    public static function getPath(string $controller, string $function, ?MethodEnum $requestMethod = null): ?string;
 }

@@ -12,16 +12,15 @@ use OpenApi\Attributes\Response;
 class SuccessJsonResponse extends Response
 {
     public function __construct(
-        object|string $ref = null,
-        array $headers = null,
-        array $links = null,
-        array $x = null,
-        array $attachables = null,
+        null|object|string $ref = null,
+        ?array $headers = null,
+        ?array $links = null,
+        ?array $x = null,
+        ?array $attachables = null,
         string $description = 'success',
         null|int|string $response = 200,
     ) {
-        $content = new class($ref) extends JsonContent
-        {
+        $content = new class($ref) extends JsonContent {
             public function __construct(object|string $ref)
             {
                 if ($ref instanceof CustomPropertyInterface) {

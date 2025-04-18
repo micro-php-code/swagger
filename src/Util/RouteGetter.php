@@ -16,7 +16,7 @@ class RouteGetter
      * @return null|class-string
      * @throws Exception
      */
-    public static function getRouteByContent(?Context $context, MethodEnum $requestMethod = null): ?string
+    public static function getRouteByContent(?Context $context, ?MethodEnum $requestMethod = null): ?string
     {
         if (! $context) {
             return null;
